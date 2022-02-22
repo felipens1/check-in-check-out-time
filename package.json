@@ -1,0 +1,31 @@
+{
+  "name": "check-in-check-out-time",
+  "version": "1.0.0",
+  "description": "A simple check-in and check-out registration app",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipens1/check-in-check-out-time.git"
+  },
+  "author": "Felipe Nascimento dos Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felipens1/check-in-check-out-time/issues"
+  },
+  "homepage": "https://github.com/felipens1/check-in-check-out-time#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "sequelize": "^6.16.2",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  },
+  "type": "module"
+}
