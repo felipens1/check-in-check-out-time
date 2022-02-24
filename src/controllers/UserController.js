@@ -1,11 +1,11 @@
 import User from '../models/User.js';
 
-export async function findAll(req, res) {
+export async function findAllUsers(req, res) {
     return await User.findAll()
         .then(users => res.json(users));
 }
 
-export async function findById(req, res) {
+export async function findUserById(req, res) {
     const { id } = req.params;
 
     const user = await User.findByPk(id);
@@ -13,7 +13,7 @@ export async function findById(req, res) {
     return res.json(user);
 }
 
-export async function create(req, res) {
+export async function createUser(req, res) {
     const { name } = req.body;
 
     const user = { name: name };
@@ -22,16 +22,18 @@ export async function create(req, res) {
         .then(newUser => res.json(newUser));
 }
 
-export async function update(req, res) {
+export async function updateUser(req, res) {
     const { id } = req.params;
+
     const { name } = req.body;
 
     return await User.update({ name: name}, { where: { id: id}})
         .then(newUser => res.json(newUser));
 }
 
-export async function destroy(req, res) {
+export async function destroyUser(req, res) {
     const { id } = req.params;
+
     return await User.destroy({ where : { id: id}})
         .then(userDestroyed => res.json(userDestroyed));
 }

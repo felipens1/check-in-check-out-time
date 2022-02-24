@@ -1,7 +1,5 @@
 import { Model, DataTypes } from "sequelize";
-import { toDefaultValue } from "sequelize/types/utils";
 import sequelize from "../database/sequelize.js";
-import User from "./User.js";
 
 class TimeCard extends Model {}
 
