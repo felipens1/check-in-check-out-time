@@ -25,9 +25,9 @@ export async function createUser(req, res) {
 export async function updateUser(req, res) {
     const { id } = req.params;
 
-    const { name } = req.body;
+    const { name, timecard_id } = req.body;
 
-    return await User.update({ name: name}, { where: { id: id}})
+    return await User.update({ name: name }, { where: { id: id}})
         .then(newUser => res.json(newUser));
 }
 

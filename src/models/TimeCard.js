@@ -1,9 +1,8 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../database/sequelize.js";
+import User from "./User.js";
 
-class TimeCard extends Model {}
-
-TimeCard.init({
+const TimeCard = sequelize.define('TimeCards', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -17,8 +16,11 @@ TimeCard.init({
         type: DataTypes.DATE,
         allowNull: false
     }    
-}, {
-    sequelize
+});
+
+TimeCard.belongsTo(User, {
+    constraints: true,
+    foreignKey: 'user_id'
 });
 
 export default TimeCard;

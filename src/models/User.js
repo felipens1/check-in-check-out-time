@@ -1,9 +1,7 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../database/sequelize.js";
 
-class User extends Model {}
-
-User.init({
+const User = sequelize.define('Users', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -12,8 +10,6 @@ User.init({
     name: {
         type: DataTypes.STRING
     }
-}, {
-    sequelize
 });
 
 export default User;
